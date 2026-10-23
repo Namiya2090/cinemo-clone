@@ -3,7 +3,7 @@ html {
   color: #f3f1ed;
 }
 
-.header {
+.header-container {
   display: flex;
   justify-content: space-between;
   padding-left: 64px;
