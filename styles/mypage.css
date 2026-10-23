@@ -1,0 +1,118 @@
+html {
+  background-color: #101113;
+  color: #f3f1ed;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 64px;
+  padding-right: 64px;
+  align-items: center;
+  width: 1440px;
+  height: 88px;
+  box-sizing: border-box;
+}
+
+.header-menu {
+  display: flex;
+  justify-content: space-around;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  width: 113px;
+  height: 29px;
+}
+
+.logo::before {
+  content: "";
+  display: inline-block;
+  width: 7px;
+  height: 22px;
+  background-color: #f28d77;
+  margin-right: 8px;
+  margin-bottom: auto;
+  margin-top: auto;
+}
+
+.header-menu {
+  display: flex;
+  gap: 32px;
+  justify-content: flex-start;
+  width: 938px;
+  height: 17px;
+  font-size: 14px;
+  color: #acaeb3;
+}
+
+.header-profile {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 149px;
+  height: 32px;
+  font-size: 14px;
+  color: #f28d77;
+}
+
+.header-profile::before {
+  content: "Y";
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background-color: #718c91;
+  color: #f3f1ed;
+  margin-right: 10px;
+}
+
+.mypage-main {
+  display: grid;
+  width: 1440px;
+  height: 1155px;
+  padding: 56px 64px 64px 64px;
+  gap: 48px;
+}
+
+.mypage {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 1312px;
+  height: 111px;
+  gap: 12px;
+}
+
+.mypage-title {
+  color: #f28d77;
+  font-size: 11px;
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.mypage-description {
+  font-size: 15px;
+  color: #acaeb3;
+}
+
+.profile-box {
+  display: flex;
+  align-items: center;
+}
+
+.profile-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-text::before {
+  content: "Y";
+  width: 88px;
+  height: 88px;
+  border-radius: 8px;
+  background-color: #718c91;
+}
