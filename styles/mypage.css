@@ -11,6 +11,7 @@ html {
   align-items: center;
   width: 1440px;
   height: 88px;
+  box-sizing: border-box;
 }
 
 .header-menu {
@@ -21,6 +22,8 @@ html {
 .logo {
   font-size: 24px;
   font-weight: bold;
+  width: 113px;
+  height: 29px;
 }
 
 .logo::before {
@@ -30,4 +33,36 @@ html {
   height: 22px;
   background-color: #f28d77;
   margin-right: 8px;
+  margin-bottom: auto;
+  margin-top: auto;
+}
+
+.header-menu {
+  display: flex;
+  gap: 32px;
+  justify-content: flex-start;
+  width: 938px;
+  height: 17px;
+  font-size: 14px;
+  color: #acaeb3;
+}
+
+.header-profile {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 149px;
+  height: 32px;
+  font-size: 14px;
+  color: #f28d77;
+}
+
+.header-profile::before {
+  content: "Y";
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background-color: #718c91;
+  color: #f3f1ed;
+  margin-right: 10px;
 }
