@@ -51,10 +51,38 @@ html {
   margin-right: 10px;
 }
 
+.profile-circle {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+}
+
+.profile-circle img {
+  display: block;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+}
+
+.avatar-y {
+  position: absolute;
+  justify-self: flex-start;
+  position: absolute;
+  font-size: 15.36px;
+  color: #f3f1ed;
+  text-align: center;
+  line-height: 32px;
+  top: 0;
+  left: 0;
+  margin-left: 10.5px;
+  width: 11px;
+  height: 19px;
+}
+
 .mypage-main {
   display: grid;
   width: 1440px;
-  height: 1155px;
   padding: 56px 64px 64px 64px;
   row-gap: 48px;
 }
@@ -104,6 +132,31 @@ h1 {
   width: 88px;
   height: 88px;
   border-radius: 8px;
+}
+
+.profile-circle-second {
+  position: relative;
+  width: 88px;
+  height: 88px;
+}
+
+.profile-circle-second img {
+  display: block;
+  width: 88px;
+  height: 88px;
+  border-radius: 8px;
+}
+
+.profile-avatar-y {
+  position: absolute;
+  top: 0;
+  width: 29px;
+  height: 51px;
+  margin-left: 29.5px;
+  color: #f3f1ed;
+  font-size: 42.24px;
+  text-align: center;
+  line-height: 88px;
 }
 
 .profile-name {
@@ -166,6 +219,24 @@ h1 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   column-gap: 24px;
+}
+
+.checkmark-background {
+  position: relative;
+  display: flex;
+}
+
+.checkmark {
+  position: absolute;
+  background-color: #101113;
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  margin-left: auto;
+  align-self: flex-start;
+  right: 0;
+  margin-top: 10px;
+  margin-right: 10px;
 }
 
 .quiet-orbit h3 {
