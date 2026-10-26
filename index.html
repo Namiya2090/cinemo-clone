@@ -23,9 +23,9 @@
   </head>
   <body>
     <!-- Header -->
-    <header id="header">
+    <header class="header">
       <!-- Home icon -->
-      <a id="home-icon" href="index.html">
+      <a href="index.html" class="home-icon" aria-label="CINEMO home">
         <svg
           width="7"
           height="22"
@@ -50,61 +50,71 @@
       </a>
 
       <!-- Navigation -->
-      <nav id="navigation">
-        <ul>
-          <li><a href="index.html">홈</a></li>
-          <li><a href="#movies">영화</a></li>
-          <li><a href="#series">시리즈</a></li>
-          <li><a href="#like">내가 찜한 콘텐츠</a></li>
+      <nav class="nav">
+        <ul class="nav-menu">
+          <li>
+            <a href="index.html" class="nav-link" aria-current="page">홈</a>
+          </li>
+          <li>
+            <a href="#movies" class="nav-link">영화</a>
+          </li>
+          <li>
+            <a href="#series" class="nav-link">시리즈</a>
+          </li>
+          <li>
+            <a href="#like" class="nav-link">내가 찜한 콘텐츠</a>
+          </li>
         </ul>
       </nav>
 
-      <!-- Mypage link -->
-      <a id="mypage-link" href="mypage.html">
-        <p>Y</p>
-        <span>욜로의 마이페이지</span>
+      <!-- My page link -->
+      <a href="mypage.html" class="mypage-link" aria-label="욜로의 마이페이지">
+        <div class="mypage-icon">Y</div>
+        <span class="mypage-text">욜로의 마이페이지</span>
       </a>
     </header>
 
     <!-- Main -->
-    <main id="main">
+    <main class="main">
       <!-- Hero section -->
-      <section id="hero-section">
+      <section class="hero-section">
         <img
           src="assets/images/Hero quiet-orbit.png"
           alt="검은 구조물이 바다 위에 서 있는 영화 메인 이미지"
+          class="hero-image"
         />
 
         <!-- Feature story -->
-        <div id="feature-story">
-          <!-- Editional label -->
-          <p>
+        <div class="feature-story">
+          <!-- Editorial label -->
+          <div class="editorial-label">
             <span>이번 주의 발견</span>
             <span>VOL. 01</span>
-          </p>
+          </div>
 
           <!-- Film title -->
-          <div>
+          <div class="film-title">
             <h2>고요의 궤도</h2>
             <p>QUIET ORBIT</p>
           </div>
 
           <!-- Film metadata -->
-          <p>
+          <div class="film-metadata">
             <span>2026</span>
-            <span>SF · 미스터리</span>
+            <span>SF</span>
+            <span>미스터리</span>
             <span>15+</span>
             <span>1시간 48분</span>
-          </p>
+          </div>
 
           <!-- Synopsis -->
-          <p>
+          <p class="synopsis">
             모든 소리가 사라진 해안, 정체를 알 수 없는 신호가 도착한다. 마지막
             관측자는 그 고요 속으로 한 걸음 다가선다.
           </p>
 
           <!-- Action buttons -->
-          <div>
+          <div class="action-buttons">
             <button type="button">
               <svg
                 width="10"
@@ -112,12 +122,13 @@
                 viewBox="0 0 10 10"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
               >
                 <path
                   d="M8.3488 8.34881V0.850006H0.849998M8.3488 0.850006L0.849998 8.34881"
                   stroke-width="1.7"
                   stroke-linecap="round"
-                  stroke="black"
+                  stroke="#241512"
                 />
               </svg>
               작품 살펴보기
@@ -129,24 +140,25 @@
                 viewBox="0 0 13 13"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
               >
                 <path
                   d="M0.850006 6.10061H6.10061M6.10061 6.10061H11.3512M6.10061 6.10061V0.850006M6.10061 6.10061V11.3512"
                   stroke-width="1.7"
                   stroke-linecap="round"
-                  stroke="black"
+                  stroke="#F3F1ED"
                 />
               </svg>
               찜하기
             </button>
           </div>
-
-          <!-- Editional aside -->
-          <aside id="editional-aside">
-            <p>고요가 시작되는 곳, 이야기가 깨어난다.</p>
-            <p>A CINEMO ORIGINAL CONCEPT</p>
-          </aside>
         </div>
+
+        <!-- Editorial aside -->
+        <aside class="editorial-aside">
+          <span>고요가 시작되는 곳, 이야기가 깨어난다.</span>
+          <span>A CINEMO ORIGINAL CONCEPT</span>
+        </aside>
       </section>
 
       <!-- First card section -->
