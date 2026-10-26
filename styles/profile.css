@@ -29,7 +29,7 @@ header h1 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 60px;
+  min-height: calc(100vh - 120px);
   text-align: center;
 }
 
@@ -106,6 +106,9 @@ header h1 {
   padding: 8px 20px;
   font-size: 14px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .btn-manage:hover {
@@ -120,4 +123,46 @@ header h1 {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
+}
+/* 상단 소제목 (YOUR OWN SCENE) */
+.badge {
+  color: #e58257;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+/* 이미지 상자 위치 기준 잡기 */
+.box {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 카드 이미지 설정 */
+.box img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* 카드 중앙 큰 알파벳 글자 */
+.avatar-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  font-size: 48px;
+  font-weight: 300;
+  pointer-events: none;
+}
+
+/* 맨 하단 푸터 텍스트 */
+.profile-footer {
+  margin-top: 60px;
+  color: #666666;
+  font-size: 12px;
 }
