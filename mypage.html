@@ -10,61 +10,86 @@
   <body>
     <header>
       <div class="header-container">
-        <p class="logo">CINEMO</p>
-        <article class="header-menu">
-          <p>홈</p>
+        <h1 class="logo">
+          <a href="./index.html">
+            <img src="./assets/images/NETFLEX identity.svg" alt="CINEMO" />
+          </a>
+        </h1>
+        <nav class="header-menu">
+          <a href="./index.html">홈</a>
           <p>영화</p>
           <p>시리즈</p>
           <p>내가 찜한 콘텐츠</p>
-        </article>
-        <article class="header-profile">
+        </nav>
+        <a href="./mypage.html" class="header-profile">
+          <img src="./assets/images/Avatar-y.svg" alt="profile-yolo" />
           <p>욜로의 마이페이지</p>
-        </article>
+        </a>
       </div>
     </header>
     <section class="mypage-main">
       <div class="mypage">
         <p class="mypage-title">MY CINEMO</p>
-        <h1>마이페이지</h1>
+        <h2>마이페이지</h2>
         <p class="mypage-description">
           취향을 모으고, 나만의 시간을 이어가세요.
         </p>
       </div>
       <div class="profile-box">
+        <img src="./assets/images/Avatar-y.svg" alt="profile-yolo" />
         <article class="profile-text">
           <section class="profile-name">
             <h2>욜로</h2>
             <p>기본 프로필</p>
           </section>
-          <p>나만의 영화 노트</p>
-          <p>2026년 10월부터 함께하는 중</p>
+          <p class="profile-movie-note">나만의 영화 노트</p>
+          <p class="profile-status">2026년 10월부터 함께하는 중</p>
         </article>
-        <article class="profile-change">
+        <a href="./profile.html" class="profile-change">
+          <img src="./assets/images/users.svg" alt="edit" />
           <p>프로필 변경</p>
-        </article>
+        </a>
       </div>
       <div class="like-content">
         <h2>내가 찜한 콘텐츠</h2>
-        <article class="quiet-orbit">
-          <img src="./assets/images/Image quiet-orbit.png" />
-          <p>고요의 궤도</p>
-          <p>SF · 미스터리 · 15+</p>
-        </article>
-        <article class="blue-hour">
-          <img src="./assets/images/Image blue-hour.png" />
-          <p>파란 시간</p>
-          <p>로맨스 · 드라마 · 12+</p>
-        </article>
-        <article class="forest-letter">
-          <img src="./assets/images/Image forest-letter.png" />
-          <p>숲에서 온 편지</p>
-          <p>판타지 · 드라마 · 전체</p>
-        </article>
-        <article class="night-diver">
-          <img src="./assets/images/Image night-diver.png" />
-          <p>밤의 잠수부</p>
-          <p>스릴러 · 미스터리 · 15+</p>
-        </article>
+        <span class="like-content-movie">
+          <article class="quiet-orbit">
+            <img src="./assets/images/Image quiet-orbit.png" />
+            <h3>고요의 궤도</h3>
+            <div class="quiet-orbit-discription">
+              <p class="discription-point">SF</p>
+              <p class="discription-point">미스터리</p>
+              <p>15+</p>
+            </div>
+          </article>
+          <article class="blue-hour">
+            <img src="./assets/images/Image blue-hour.png" />
+            <h3>파란 시간</h3>
+            <div class="blue-hour-discription">
+              <p class="discription-point">로맨스</p>
+              <p class="discription-point">드라마</p>
+              <p>12+</p>
+            </div>
+          </article>
+          <article class="forest-letter">
+            <img src="./assets/images/Image forest-letter.png" />
+            <h3>숲에서 온 편지</h3>
+            <div class="forest-letter-discription">
+              <p class="discription-point">판타지</p>
+              <p class="discription-point">드라마</p>
+              <p>전체</p>
+            </div>
+          </article>
+          <article class="night-diver">
+            <img src="./assets/images/Image night-diver.png" />
+            <h3>밤의 잠수부</h3>
+            <div class="night-diver-discription">
+              <p class="discription-point">스릴러</p>
+              <p class="discription-point">미스터리</p>
+              <p>15+</p>
+            </div>
+          </article>
+        </span>
       </div>
     </section>
   </body>
