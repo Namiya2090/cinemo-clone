@@ -56,7 +56,7 @@ html {
   width: 1440px;
   height: 1155px;
   padding: 56px 64px 64px 64px;
-  gap: 48px;
+  row-gap: 48px;
 }
 
 .mypage {
@@ -154,4 +154,84 @@ h1 {
   width: 18px;
   height: 18px;
   margin-right: 8px;
+}
+
+.like-content h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 24px;
+}
+
+.like-content-movie {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 24px;
+}
+
+.quiet-orbit h3 {
+  font-size: 16px;
+  font-weight: medium;
+  margin-top: 8px;
+  color: #f3f1ed;
+}
+
+.quiet-orbit-discription {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  color: #acaeb3;
+  font-size: 11px;
+}
+
+.discription-point::after {
+  content: "·";
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  margin: 4px;
+}
+
+.blue-hour h3 {
+  font-size: 16px;
+  font-weight: medium;
+  margin-top: 8px;
+  color: #f3f1ed;
+}
+
+.blue-hour-discription {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  color: #acaeb3;
+  font-size: 11px;
+}
+
+.forest-letter h3 {
+  font-size: 16px;
+  font-weight: medium;
+  margin-top: 8px;
+  color: #f3f1ed;
+}
+
+.forest-letter-discription {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  color: #acaeb3;
+  font-size: 11px;
+}
+
+.night-diver h3 {
+  font-size: 16px;
+  font-weight: medium;
+  margin-top: 8px;
+  color: #f3f1ed;
+}
+
+.night-diver-discription {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  color: #acaeb3;
+  font-size: 11px;
 }
