@@ -10,60 +10,42 @@
   --text-color-second: #acaeb3;
 }
 
+/* Body */
+body {
+  min-width: 390px;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
 /* 헤더 */
 #header {
   display: flex;
-  gap: 56px;
   align-items: center;
+  justify-content: space-between;
+  position: relative;
 
   height: clamp(72px, 6.11vw, 88px);
-  padding: 0 64px;
+  padding: 0 clamp(24px, 4.44vw, 64px);
   background-color: var(--main-color);
+
+  font-size: clamp(13px, 1vw, 14px);
+  color: var(--text-color-second);
 }
 
 /* 홈 아이콘 */
 #home-icon {
   display: flex;
-  gap: 8px;
   align-items: center;
-
-  width: 7.85vw;
-  min-width: 93px;
-}
-
-/* 네비게이션 */
-#navigation {
-  flex: 1;
-}
-
-/* 네비게이션 메뉴 목록 */
-#navigation > ul {
-  display: flex;
-  gap: 32px;
-
-  font-family: "Noto Sans KR", sans-serif;
-  font-size: clamp(13px, 1vw, 14px);
-  color: var(--text-color-second);
-}
-
-/* 네비게이션 메뉴 목록의 첫 번째 항목 */
-#navigation > ul > li:first-child > a {
-  font-weight: bold;
-  color: var(--text-color-first);
-}
-
-/* 마이페이지 링크 */
-#mypage-link {
-  display: flex;
   gap: 8px;
-  align-items: center;
 
-  font-family: "Noto Sans KR", sans-serif;
-  font-size: clamp(13px, 1vw, 14px);
-  color: var(--text-color-second);
+  width: clamp(93px, 7.85vw, 113px);
 }
 
-/* 마이페이지 아이콘 */
+/* 마이페이지 링크 텍스트 */
+#mypage-link > span {
+  display: none;
+}
+
+/* 마이페이지 링크 아이콘 */
 #mypage-link > p {
   width: 32px;
   height: 32px;
@@ -75,4 +57,68 @@
   color: var(--text-color-first);
   text-align: center;
   line-height: 32px;
+}
+
+/* 네비게이션 */
+#navigation {
+  position: absolute;
+  top: 100%;
+  left: 0;
+
+  width: 100%;
+  padding: 0 24px;
+  background-color: var(--main-color);
+  line-height: 48px;
+}
+
+/* 네비게이션 메뉴 목록 */
+#navigation > ul {
+  display: flex;
+  gap: clamp(24px, 2.22vw, 32px);
+}
+
+/* 네비게이션 메뉴 항목 */
+#navigation > ul > li:hover {
+  color: var(--text-color-first);
+}
+
+/* 네비게이션 메뉴 첫 번째 항목 */
+#navigation > ul > li:first-child {
+  font-weight: bold;
+  color: var(--text-color-first);
+}
+
+/* 화면 너비가 600px 이상 */
+@media screen and (min-width: 600px) {
+  /* 헤더 */
+  #header {
+    justify-content: normal;
+    gap: clamp(0px, 3.98vw, 56px);
+  }
+
+  /* 마이페이지 링크 */
+  #mypage-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* 마이페이지 링크 텍스트 */
+  #mypage-link > span {
+    display: inline;
+    color: var(--text-color-first);
+  }
+
+  #mypage-link > span:hover {
+    text-decoration: underline;
+  }
+
+  /* 네비게이션 */
+  #navigation {
+    flex: 1;
+    position: static;
+
+    width: auto;
+    padding: 0;
+  }
 }
