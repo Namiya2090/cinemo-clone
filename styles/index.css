@@ -1,0 +1,78 @@
+@charset "UTF-8";
+
+/* 사용할 변수 */
+:root {
+  --main-color: #101113;
+  --sub-color: #232529;
+  --strong-color: #f28d77;
+
+  --text-color-first: #f3f1ed;
+  --text-color-second: #acaeb3;
+}
+
+/* 헤더 */
+#header {
+  display: flex;
+  gap: 56px;
+  align-items: center;
+
+  height: clamp(72px, 6.11vw, 88px);
+  padding: 0 64px;
+  background-color: var(--main-color);
+}
+
+/* 홈 아이콘 */
+#home-icon {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+
+  width: 7.85vw;
+  min-width: 93px;
+}
+
+/* 네비게이션 */
+#navigation {
+  flex: 1;
+}
+
+/* 네비게이션 메뉴 목록 */
+#navigation > ul {
+  display: flex;
+  gap: 32px;
+
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: clamp(13px, 1vw, 14px);
+  color: var(--text-color-second);
+}
+
+/* 네비게이션 메뉴 목록의 첫 번째 항목 */
+#navigation > ul > li:first-child > a {
+  font-weight: bold;
+  color: var(--text-color-first);
+}
+
+/* 마이페이지 링크 */
+#mypage-link {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: clamp(13px, 1vw, 14px);
+  color: var(--text-color-second);
+}
+
+/* 마이페이지 아이콘 */
+#mypage-link > p {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: url("../assets/images/Avatar-y.svg") center / cover;
+
+  font-family: "Inter", sans-serif;
+  font-size: 15.36px;
+  color: var(--text-color-first);
+  text-align: center;
+  line-height: 32px;
+}
