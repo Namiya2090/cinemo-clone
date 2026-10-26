@@ -20,21 +20,8 @@ html {
 }
 
 .logo {
-  font-size: 24px;
-  font-weight: bold;
-  width: 113px;
-  height: 29px;
-}
-
-.logo::before {
-  content: "";
-  display: inline-block;
-  width: 7px;
-  height: 22px;
-  background-color: #f28d77;
-  margin-right: 8px;
-  margin-bottom: auto;
-  margin-top: auto;
+  display: flex;
+  align-items: center;
 }
 
 .header-menu {
@@ -57,13 +44,10 @@ html {
   color: #f28d77;
 }
 
-.header-profile::before {
-  content: "Y";
+.header-profile img {
   width: 32px;
   height: 32px;
   border-radius: 8px;
-  background-color: #718c91;
-  color: #f3f1ed;
   margin-right: 10px;
 }
 
@@ -100,19 +84,74 @@ h1 {
 }
 
 .profile-box {
-  display: flex;
+  display: grid;
   align-items: center;
+  background-color: #1a1c1f;
+  width: 1312px;
+  height: 152px;
+  padding: 32px;
+  grid-template-columns: 88px 1fr auto;
+  column-gap: 28px;
 }
 
 .profile-text {
   display: flex;
   flex-direction: column;
+  gap: 8px;
 }
 
-.profile-text::before {
-  content: "Y";
+.profile-box img {
   width: 88px;
   height: 88px;
   border-radius: 8px;
-  background-color: #718c91;
+}
+
+.profile-name {
+  display: flex;
+  align-items: center;
+}
+
+.profile-name h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-right: 12px;
+}
+
+.profile-name p {
+  font-size: 11px;
+  color: #f28d77;
+}
+
+.profile-movie-note {
+  font-size: 13px;
+  color: #acaeb3;
+}
+
+.profile-status {
+  font-size: 11px;
+  color: #7e8289;
+}
+
+.profile-change {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-self: flex-end;
+  width: 138px;
+  height: 48px;
+  border: 1px solid #303237;
+  border-radius: 4px;
+  margin-left: 22px;
+  margin-right: 22px;
+}
+
+.profile-change p {
+  font-size: 14px;
+  color: #f3f1ed;
+}
+
+.profile-change img {
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
 }
