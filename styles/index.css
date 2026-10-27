@@ -16,7 +16,7 @@
 body {
   width: 100%;
   max-width: 1440px;
-  min-width: 390px;
+  min-width: 320px;
   margin: 0 auto;
   background-color: var(--color-background);
 
@@ -36,7 +36,7 @@ body {
   align-items: center;
   justify-content: space-between;
 
-  width: clamp(390px, 100vw, 1440px);
+  width: clamp(320px, 100vw, 1440px);
   height: clamp(72px, 6.11vw, 88px);
   padding: 0 clamp(24px, 4.44vw, 64px);
   background-color: var(--color-background);
@@ -153,7 +153,7 @@ body {
   flex-direction: column;
   gap: 20px;
 
-  width: clamp(342px, 37.5vw, 540px);
+  width: clamp(272px, 37.5vw, 540px);
 }
 
 /* Editorial label */
@@ -259,6 +259,8 @@ body {
   height: 48px;
   padding: 0 22px;
   border-radius: 4px;
+
+  font-size: 14px;
 }
 
 .action-buttons > button:nth-child(1) {
@@ -470,7 +472,7 @@ body {
      footer
 =======================*/
 .footer {
-  margin-top:;
+  /* margin-top:; */
   padding: 40px 64px;
 }
 
