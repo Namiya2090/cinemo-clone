@@ -18,12 +18,14 @@ body {
   max-width: 1440px;
   min-width: 390px;
   margin: 0 auto;
+  background-color: var(--color-background);
 
   font-family: "Noto Sans KR", sans-serif;
 }
 
-/* ------------------------------ */
-
+/*======================================================
+  Header 영역
+======================================================*/
 /* Header */
 .header {
   position: fixed;
@@ -107,8 +109,9 @@ body {
   transition: var(--transition-color);
 }
 
-/* ------------------------------ */
-
+/*======================================================
+  Main 영역
+======================================================*/
 .main {
   padding-top: clamp(72px, 6.11vw, 88px);
 }
@@ -123,7 +126,6 @@ body {
   padding-bottom: clamp(36px, calc(22.63px + 3.43vw), 72px);
   padding-left: clamp(24px, calc(9.14px + 3.81vw), 64px);
   margin-top: 48px;
-  background-color: var(--color-background);
 }
 
 /* Hero image */
@@ -138,8 +140,8 @@ body {
   object-fit: cover;
   object-position: 80% center;
 
-  -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
-  mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 20%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 20%, transparent 100%);
 }
 
 /* Feature story */
@@ -275,8 +277,9 @@ body {
   display: none;
 }
 
-/* ------------------------------ */
-
+/*======================================================
+  Hover 기능
+======================================================*/
 /* hover가 가능한 기기의 hover */
 @media (hover: hover) {
   /* My page link text */
@@ -290,8 +293,9 @@ body {
   }
 }
 
-/* ------------------------------ */
-
+/*======================================================
+  반응형
+======================================================*/
 /* 화면 너비가 768px 이상일때 */
 @media (min-width: 768px) {
   /* Header */
@@ -371,49 +375,53 @@ body {
   }
 }
 
-/*배경*/
-body {
-  background-color: var(--main-color);
-}
-
 /*======================================================
   card-section (영화카드)
+  
+  [수정사항]
+  body 배경색 충돌 현상 수정
+  CSS 변수 색상 동기화
+  선택자 이름 수정
 ======================================================*/
-.card-section {
+/* Card grid article */
+.card-grid-article {
   max-width: var(--container-max-width, 1440px);
   margin: 0 auto;
   padding: 48px 64px 0;
 }
 
-/* 카드 섹션 헤더 */
-.section-header {
+/* Card list header */
+.card-list-header {
   position: relative;
   margin-bottom: 24px;
 }
-.section-header h3 {
+
+.card-list-header h3 {
   font-size: 24px;
   font-weight: bold;
-  color: var(--text-color-first);
+  color: var(--color-text);
   margin-bottom: 8px;
   padding: 0;
 }
-/* '4편의 이야기 */
-.section-header span {
+
+/* 4편의 이야기 */
+.card-list-header span {
   position: absolute;
   top: 4px;
   right: 0;
   padding-right: 0;
-  font-size: 12 px;
+  font-size: 12px;
   color: #7e8289;
 }
-.section-header p {
+
+.card-list-header p {
   font-size: 12px;
   padding: 0;
-  color: var(--text-color-second);
+  color: var(--color-secondary);
 }
 
-/*카드 리스트*/
-.card-grid {
+/* Card List */
+.card-list {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -423,13 +431,13 @@ body {
   padding-bottom: 48px;
 }
 
-/* 개별 카드 (.card) */
-.card {
+/* Card item */
+.card-item {
   flex: 0 0 calc((100% - 72px) / 4);
   min-width: 240px;
 }
 
-/* 썸네일 박스*/
+/* Movie thumbnail */
 .movie-thumb {
   width: 100%;
   aspect-ratio: 16 / 9;
@@ -444,17 +452,18 @@ body {
   object-fit: cover;
 }
 
-/* 카드 제목 및 설명 */
-.card h4 {
+/* Card title and explain */
+.card-item h4 {
   font-size: 16px;
   font-weight: 500;
-  color: var(--text-color-first);
+  color: var(--color-text);
   margin-bottom: 4px;
 }
-.card p {
+
+.card-item p {
   font-size: 11px;
   font-weight: 400;
-  color: var(--text-color-second);
+  color: var(--color-secondary);
 }
 
 /*=====================
