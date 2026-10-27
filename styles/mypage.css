@@ -1,6 +1,7 @@
 html {
   background-color: #101113;
   color: #f3f1ed;
+  max-width: 1440px;
 }
 
 .header-container {
@@ -17,6 +18,19 @@ html {
 .header-menu {
   display: flex;
   justify-content: space-around;
+  align-items: center;
+}
+
+.header-menu ul {
+  display: flex;
+  gap: 32px;
+  justify-content: flex-start;
+  font-size: 14px;
+  color: #acaeb3;
+}
+
+.header-menu li:hover {
+  color: #f3f1ed;
 }
 
 .logo {
@@ -51,6 +65,10 @@ html {
   margin-right: 10px;
 }
 
+.header-profile p:hover {
+  text-decoration: underline;
+}
+
 .profile-circle {
   position: relative;
   width: 32px;
@@ -66,6 +84,7 @@ html {
 }
 
 .avatar-y {
+  font-family: "Inter", sans-serif;
   position: absolute;
   justify-self: flex-start;
   position: absolute;
@@ -157,6 +176,7 @@ h1 {
   font-size: 42.24px;
   text-align: center;
   line-height: 88px;
+  font-family: "Inter", sans-serif;
 }
 
 .profile-name {
