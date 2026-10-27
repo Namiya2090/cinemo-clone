@@ -35,14 +35,28 @@ header h1 {
 }
 
 .profile-container h2 {
-  font-size: 32px;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 700;
+  font-size: 40px; /* 32px에서 40px로 수정 */
+  line-height: 100%;
+  letter-spacing: -0.01em; /* 자간 -1% 적용 */
+  color: #f3f1ed; /* 시안 텍스트 색상 */
   margin-bottom: 8px;
 }
 
 .subtitle {
-  color: #a3a3a3;
-  font-size: 14px;
-  margin-bottom: 40px;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 180%;
+  letter-spacing: 0;
+  color: #acaeb3;
+  text-align: center;
+
+  /* 👈 아래 3줄을 꼭 확인/추가해 주세요! */
+  width: 100%;
+  max-width: 100%; /* 부모 폭을 넘치지 않게 고정 */
+  margin: 0 auto 40px; /* 좌우 margin을 auto로 주어 중앙 정렬 보장 */
 }
 
 /* 카드 4개 배치 (PC 기준: 가로 정렬) */
@@ -57,7 +71,7 @@ header h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  cursor: pointer;
+  gap: 16px; /* 👈 이미지 박스와 (이름+설명) 사이 간격을 16px로 시안과 동일하게 고정 */
 }
 
 .box {
@@ -88,9 +102,13 @@ header h1 {
 }
 
 .name {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0 0 4px 0;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 100%;
+  color: #f3f1ed;
+  margin: 0; /* 개별 마진 제거 */
+  margin-bottom: 4px; /* 이름과 아래 설명 문구 사이 최소 간격 */
 }
 
 .desc {
@@ -220,12 +238,13 @@ header h1 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #ffffff;
-  font-size: 48px;
-  font-weight: 300;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 48px; /* 피그마 변형 비율을 반영한 실제 웹 출력 폰트 크기 */
+  line-height: 100%;
+  color: #f3f1ed;
   pointer-events: none;
 }
-
 /* 맨 하단 푸터 텍스트 */
 .profile-footer {
   margin-top: 60px;
