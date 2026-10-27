@@ -2,17 +2,37 @@ html {
   background-color: #101113;
   color: #f3f1ed;
   max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  max-width: 1440px;
+  min-width: 320px;
+  margin: 0 auto;
+  font-family: "Noto Sans KR", sans-serif;
+  box-sizing: border-box;
 }
 
 .header-container {
+  position: fixed;
   display: flex;
   justify-content: space-between;
-  padding-left: 64px;
-  padding-right: 64px;
+  top: 0;
+  left: 50%;
+  z-index: 10;
+  transform: translateX(-50%);
   align-items: center;
-  width: 1440px;
+  width: 100%;
+  max-width: 1440px;
   height: 88px;
+  padding: 0 64px;
+
+  font-size: clamp(13px, 0.97vw, 14px);
   box-sizing: border-box;
+  background-color: #101113;
 }
 
 .header-menu {
@@ -36,6 +56,11 @@ html {
 .logo {
   display: flex;
   align-items: center;
+}
+
+.logo img {
+  width: 136px;
+  height: 29px;
 }
 
 .header-menu {
@@ -101,8 +126,10 @@ html {
 
 .mypage-main {
   display: grid;
-  width: 1440px;
-  padding: 56px 64px 64px 64px;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 120px 64px 64px;
   row-gap: 48px;
 }
 
@@ -110,9 +137,14 @@ html {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 1312px;
-  height: 111px;
+  width: 100%;
+  height: auto;
   gap: 12px;
+}
+
+.mypage h2 {
+  font-size: 40px;
+  font-weight: bold;
 }
 
 .mypage-title {
@@ -134,10 +166,10 @@ h1 {
   display: grid;
   align-items: center;
   background-color: #1a1c1f;
-  width: 1312px;
+  width: 100%;
   height: 152px;
   padding: 32px;
-  grid-template-columns: 88px 1fr auto;
+  grid-template-columns: 88px minmax(0, 1fr) auto;
   column-gap: 28px;
 }
 
@@ -145,6 +177,7 @@ h1 {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  min-width: 0;
 }
 
 .profile-box img {
@@ -237,8 +270,10 @@ h1 {
 
 .like-content-movie {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   column-gap: 24px;
+  row-gap: 32px;
+  width: 100%;
 }
 
 .checkmark-background {
@@ -325,4 +360,404 @@ h1 {
   gap: 4px;
   color: #acaeb3;
   font-size: 11px;
+}
+
+@media screen and (max-width: 768px) {
+  html,
+  body {
+    width: 100%;
+    min-width: 320px;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  .header-container {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-rows: 88px 56px;
+
+    width: 100%;
+    height: 144px;
+    padding: 0 24px;
+
+    background-color: #101113;
+    gap: 0;
+  }
+
+  .header-menu {
+    grid-column: 1 / -1;
+    grid-row: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    width: calc(100% + 48px);
+    height: 56px;
+    margin-left: -24px;
+    padding: 0 24px;
+
+    border-bottom: 1px solid #303237;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .header-menu ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    gap: 28px;
+
+    margin: 0;
+    padding: 0;
+
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  .header-menu li {
+    flex-shrink: 0;
+  }
+
+  .logo {
+    display: flex;
+    grid-column: 1;
+    grid-row: 1;
+    align-self: center;
+    justify-self: start;
+    width: 93px;
+    min-width: 93px;
+    flex-shrink: 0;
+  }
+
+  .logo a {
+    display: block;
+    width: 93px;
+    flex-shrink: 0;
+  }
+
+  .logo img {
+    display: block;
+    width: 93px;
+    min-width: 93px;
+    height: 23px;
+    object-fit: contain;
+    object-position: left center;
+  }
+
+  .header-profile {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+    align-self: center;
+    width: auto;
+    flex-shrink: 0;
+  }
+
+  .header-profile .profile-circle {
+    width: 40px;
+    height: 40px;
+    margin-right: 0;
+  }
+
+  .header-profile .profile-circle img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .header-profile > p {
+    display: none;
+  }
+
+  .header-profile .avatar-y {
+    width: 11px;
+    height: 19px;
+    margin-left: 14.5px;
+    font-size: 15px;
+    line-height: 40px;
+  }
+
+  .mypage-main {
+    display: grid;
+    width: 100%;
+    padding: 96px 20px 40px;
+    row-gap: 32px;
+    padding-top: 176px;
+  }
+
+  .mypage {
+    width: 100%;
+    height: auto;
+    gap: 10px;
+  }
+
+  .mypage h2 {
+    font-size: 28px;
+  }
+
+  .mypage-description {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .profile-box {
+    position: relative;
+    display: grid;
+    grid-template-columns: 94px minmax(0, 1fr);
+    align-content: start;
+    align-items: start;
+    width: 100%;
+    height: 258px;
+    padding: 35px;
+    column-gap: 29px;
+    row-gap: 0;
+  }
+
+  .profile-circle-second {
+    position: relative;
+    width: 94px;
+    height: 94px;
+  }
+
+  .profile-circle-second img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+  }
+
+  .profile-avatar-y {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin-left: 0;
+    font-size: 42px;
+    line-height: 94px;
+    text-align: center;
+  }
+
+  .profile-text {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    gap: 8px;
+    padding-top: 10px;
+  }
+
+  .profile-name {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 12px;
+  }
+
+  .profile-name h2 {
+    margin-right: 0;
+    font-size: 28px;
+  }
+
+  .profile-name p {
+    font-size: 14px;
+  }
+
+  .profile-movie-note {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .profile-status {
+    position: absolute;
+    left: 35px;
+    bottom: 54px;
+    font-size: 14px;
+  }
+
+  .profile-change {
+    position: absolute;
+    right: 35px;
+    bottom: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 139px;
+    height: 59px;
+    margin: 0;
+    border: 1px solid #303237;
+    border-radius: 6px;
+  }
+
+  .profile-change p {
+    font-size: 16px;
+  }
+
+  .profile-change img {
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+  }
+
+  .like-content h2 {
+    margin-bottom: 16px;
+    font-size: 20px;
+  }
+
+  .like-content-movie {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 12px;
+    row-gap: 24px;
+  }
+
+  .checkmark-background {
+    width: 100%;
+  }
+
+  .checkmark-background > img:first-child {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .checkmark {
+    width: 22px;
+    height: 22px;
+    margin-top: 8px;
+    margin-right: 8px;
+  }
+
+  .quiet-orbit h3,
+  .blue-hour h3,
+  .forest-letter h3,
+  .night-diver h3 {
+    margin-top: 8px;
+    font-size: 14px;
+  }
+
+  .quiet-orbit-discription,
+  .blue-hour-discription,
+  .forest-letter-discription,
+  .night-diver-discription {
+    flex-wrap: wrap;
+    gap: 4px;
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .header-container {
+    padding: 0 20px;
+  }
+
+  .logo,
+  .logo a,
+  .logo img {
+    width: 93px;
+    min-width: 93px;
+  }
+
+  .logo img {
+    height: 23px;
+  }
+
+  .header-menu {
+    width: calc(100% + 40px);
+    margin-left: -20px;
+    padding: 0 20px;
+  }
+
+  .header-menu ul {
+    gap: 24px;
+    font-size: 13px;
+  }
+
+  .mypage-main {
+    padding-right: 16px;
+    padding-left: 16px;
+    padding-top: 168px;
+  }
+
+  .profile-box {
+    padding: 16px;
+    column-gap: 12px;
+  }
+
+  .profile-box {
+    height: 240px;
+    padding: 24px 20px;
+    grid-template-columns: 76px minmax(0, 1fr);
+    column-gap: 16px;
+  }
+
+  .profile-circle-second {
+    width: 76px;
+    height: 76px;
+  }
+
+  .profile-avatar-y {
+    font-size: 34px;
+    line-height: 76px;
+  }
+
+  .profile-text {
+    padding-top: 4px;
+  }
+
+  .profile-name h2 {
+    font-size: 22px;
+  }
+
+  .profile-name p {
+    font-size: 12px;
+  }
+
+  .profile-movie-note {
+    font-size: 13px;
+  }
+
+  .profile-status {
+    left: 20px;
+    bottom: 30px;
+    font-size: 12px;
+  }
+
+  .profile-change {
+    right: 20px;
+    bottom: 20px;
+    width: 125px;
+    height: 46px;
+  }
+
+  .profile-change p {
+    font-size: 13px;
+  }
+
+  .profile-name h2 {
+    font-size: 20px;
+  }
+
+  .like-content-movie {
+    column-gap: 10px;
+  }
+
+  .quiet-orbit h3,
+  .blue-hour h3,
+  .forest-letter h3,
+  .night-diver h3 {
+    font-size: 13px;
+  }
 }
