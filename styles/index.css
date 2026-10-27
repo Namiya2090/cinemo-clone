@@ -489,7 +489,7 @@ body {
 }
 .footer-2026cinemo {
   font-size: 10px;
-=======
+
 /*======================================================
   Hover 기능
 ======================================================*/
@@ -585,4 +585,4 @@ body {
   .editorial-aside > span:nth-child(2) {
     font-size: 10px;
     color: var(--color-secondary, #acaeb3);
-  } 
+  }
