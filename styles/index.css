@@ -494,4 +494,103 @@ css
 }
 .footer-2026cinemo {
   font-size: 10px;
+
+
+/*======================================================
+  Hover 기능
+======================================================*/
+/* hover가 가능한 기기의 hover */
+@media (hover: hover) {
+  /* My page link text */
+  .mypage-link:hover > span {
+    color: var(--color-accent, #f28d77);
+  }
+
+  /* Navigation item */
+  .nav-link:hover {
+    color: var(--color-text, #f3f1ed);
+  }
 }
+
+/*======================================================
+  반응형
+======================================================*/
+/* 화면 너비가 768px 이상일때 */
+@media (min-width: 768px) {
+  /* Header */
+  .header {
+    justify-content: flex-start;
+    gap: clamp(0px, 3.98vw, 56px);
+  }
+
+  /* Navigation */
+  .nav {
+    position: static;
+    flex: 1;
+
+    width: auto;
+    padding: 0;
+  }
+
+  /* My page link */
+  .mypage-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* My page link text */
+  .mypage-text {
+    display: inline;
+    color: var(--color-text, #f3f1ed);
+  }
+
+  .mypage-link:focus-visible > span {
+    color: var(--color-accent, #f28d77);
+  }
+
+  /* ------------------------------ */
+
+  /* Hero section */
+  .hero-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    margin-top: 0;
+  }
+
+  .hero-section::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+      to right,
+      rgba(10, 13, 15, 0.9),
+      transparent 65%
+    );
+
+    pointer-events: none;
+  }
+
+  /* Editorial aside */
+  .editorial-aside {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+  }
+
+  .editorial-aside > span:nth-child(1) {
+    margin-top: auto;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: var(--color-text, #f3f1ed);
+  }
+
+  .editorial-aside > span:nth-child(2) {
+    font-size: 10px;
+    color: var(--color-secondary, #acaeb3);
+  }
+
+
