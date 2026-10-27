@@ -456,3 +456,36 @@ body {
   font-weight: 400;
   color: var(--text-color-second);
 }
+
+/*=====================
+     footer
+=======================*/
+.footer {
+  margin-top:;
+  padding: 40px 64px;
+}
+
+.footer div {
+  max-width: var(--container-max-width, 1440px);
+  max-width: var(--container-max-width, 1440px);
+  margin: 0 auto;
+}
+
+/*푸터 메뉴 목록*/
+.footer ul {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 20px;
+  font-size: 12px;
+  color: var(--color-secondary);
+}
+/* 푸터 안내 및 문구*/
+.footer-notice {
+  font-size: 11px;
+  color: #7e8289;
+  margin-bottom: 20px;
+}
+.footer-2026cinemo {
+  font-size: 10px;
+  color: #7e8289;
+}
