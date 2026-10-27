@@ -56,19 +56,25 @@ body {
 .logo {
   display: flex;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .logo img {
+  display: block;
   width: 136px;
-  height: 29px;
+  height: auto;
+  flex-shrink: 0;
 }
 
 .header-menu {
   display: flex;
-  gap: 32px;
+  align-items: center;
   justify-content: flex-start;
-  width: 938px;
+  flex: 1;
+  min-width: 0;
+  width: auto;
   height: 17px;
+  margin: 0 32px;
   font-size: 14px;
   color: #acaeb3;
 }
@@ -77,10 +83,17 @@ body {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  width: 149px;
+  flex: 0 0 auto;
+  width: auto;
+  min-width: max-content;
   height: 32px;
   font-size: 14px;
   color: #f28d77;
+  white-space: nowrap;
+}
+
+.header-profile p {
+  white-space: nowrap;
 }
 
 .header-profile img {
@@ -238,6 +251,14 @@ h1 {
   color: #7e8289;
 }
 
+.status-pc {
+  display: inline;
+}
+
+.status-mobile {
+  display: none;
+}
+
 .profile-change {
   display: flex;
   justify-content: center;
@@ -249,6 +270,10 @@ h1 {
   border-radius: 4px;
   margin-left: 22px;
   margin-right: 22px;
+}
+
+.profile-change:hover {
+  background-color: #303237;
 }
 
 .profile-change p {
@@ -406,21 +431,27 @@ h1 {
 
     width: calc(100% + 48px);
     height: 56px;
-    margin-left: -24px;
+    margin: 0 0 0 -24px;
     padding: 0 24px;
 
     border-bottom: 1px solid #303237;
     overflow-x: auto;
+    overflow-y: hidden;
     scrollbar-width: none;
+  }
+
+  .header-menu::-webkit-scrollbar {
+    display: none;
   }
 
   .header-menu ul {
     display: flex;
+    flex-wrap: nowrap;
     align-items: center;
     justify-content: flex-start;
     flex-wrap: nowrap;
     gap: 28px;
-
+    flex-wrap: nowrap;
     margin: 0;
     padding: 0;
 
@@ -454,8 +485,8 @@ h1 {
     width: 93px;
     min-width: 93px;
     height: 23px;
-    object-fit: contain;
     object-position: left center;
+    object-fit: contain;
   }
 
   .header-profile {
@@ -465,6 +496,7 @@ h1 {
     align-self: center;
     width: auto;
     flex-shrink: 0;
+    min-width: 0;
   }
 
   .header-profile .profile-circle {
@@ -587,6 +619,14 @@ h1 {
     font-size: 14px;
   }
 
+  .status-pc {
+    display: none;
+  }
+
+  .status-mobile {
+    display: inline;
+  }
+
   .profile-change {
     position: absolute;
     right: 35px;
@@ -686,8 +726,8 @@ h1 {
   }
 
   .mypage-main {
-    padding-right: 16px;
-    padding-left: 16px;
+    padding-right: 20px;
+    padding-left: 20px;
     padding-top: 168px;
   }
 
