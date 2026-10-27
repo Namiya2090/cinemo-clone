@@ -9,7 +9,7 @@
   --color-accent: #f28d77;
   --color-border: #303237;
 
-  --transition-color: color 200ms ease-in-out;
+  --transition-text-color: color 200ms ease-in-out;
 }
 
 /* 기본 스타일 */
@@ -18,7 +18,7 @@ body {
   max-width: 1440px;
   min-width: 320px;
   margin: 0 auto;
-  background-color: var(--color-background);
+  background-color: var(--color-background, #101113);
 
   font-family: "Noto Sans KR", sans-serif;
 }
@@ -39,7 +39,7 @@ body {
   width: clamp(320px, 100vw, 1440px);
   height: clamp(72px, 6.11vw, 88px);
   padding: 0 clamp(24px, 4.44vw, 64px);
-  background-color: var(--color-background);
+  background-color: var(--color-background, #101113);
 
   font-size: clamp(13px, 0.97vw, 14px);
 }
@@ -61,7 +61,7 @@ body {
 
   width: 100%;
   padding: 0 24px;
-  background-color: var(--color-background);
+  background-color: var(--color-background, #101113);
 }
 
 /* Navigation menu */
@@ -75,18 +75,18 @@ body {
   display: block;
 
   line-height: 48px;
-  color: var(--color-secondary);
+  color: var(--color-secondary, #acaeb3);
 
-  transition: var(--transition-color);
+  transition: var(--transition-text-color, color 200ms ease-in-out);
 }
 
 .nav-link[aria-current="page"] {
   font-weight: bold;
-  color: var(--color-text);
+  color: var(--color-text, #f3f1ed);
 }
 
 .nav-link:focus-visible {
-  color: var(--color-text);
+  color: var(--color-text, #f3f1ed);
 }
 
 /* My page link icon */
@@ -100,13 +100,13 @@ body {
   font-size: 15.36px;
   line-height: 32px;
   text-align: center;
-  color: var(--color-text);
+  color: var(--color-text, #f3f1ed);
 }
 
 /* My page link text */
 .mypage-text {
   display: none;
-  transition: var(--transition-color);
+  transition: var(--transition-text-color, color 200ms ease-in-out);
 }
 
 /*======================================================
@@ -121,10 +121,8 @@ body {
   position: relative;
 
   height: clamp(573px, 40.97vw, 590px);
-  padding-top: clamp(104px, calc(317.94px - 14.86vw), 260px);
-  padding-right: clamp(24px, 4.44vw, 64px);
-  padding-bottom: clamp(36px, calc(22.63px + 3.43vw), 72px);
-  padding-left: clamp(24px, calc(9.14px + 3.81vw), 64px);
+  padding: clamp(104px, calc(317.94px - 14.86vw), 260px)
+    clamp(24px, 4.44vw, 64px) clamp(24px, 4.44vw, 64px);
   margin-top: 48px;
 }
 
@@ -176,18 +174,18 @@ body {
   content: "";
   width: 24px;
   height: 2px;
-  background-color: var(--color-accent);
+  background-color: var(--color-accent, #f28d77);
 }
 
 .editorial-label > span:nth-child(1) {
   font-size: 12px;
   font-weight: 500;
-  color: var(--color-accent);
+  color: var(--color-accent, #f28d77);
 }
 
 .editorial-label > span:nth-child(2) {
   font-size: 10px;
-  color: var(--color-secondary);
+  color: var(--color-secondary, #acaeb3);
 }
 
 /* Film title */
@@ -196,13 +194,13 @@ body {
 
   font-size: 40px;
   font-weight: bold;
-  color: var(--color-text);
+  color: var(--color-text, #f3f1ed);
   line-height: 48px;
 }
 
 .film-title > p {
   font-size: 11px;
-  color: var(--color-secondary);
+  color: var(--color-secondary, #acaeb3);
   line-height: 13px;
 }
 
@@ -211,7 +209,7 @@ body {
   display: flex;
   gap: 12px;
   font-size: 12px;
-  color: var(--color-secondary);
+  color: var(--color-secondary, #acaeb3);
   line-height: 14px;
 }
 
@@ -231,7 +229,7 @@ body {
   width: 2px;
   height: 2px;
   border-radius: 50%;
-  background-color: var(--color-secondary);
+  background-color: var(--color-secondary, #acaeb3);
 }
 
 .film-metadata > span:nth-child(4) {
@@ -242,7 +240,7 @@ body {
 /* Synopsis */
 .synopsis {
   font-size: 14px;
-  color: var(--color-secondary);
+  color: var(--color-secondary, #acaeb3);
 }
 
 /* Action buttons */
@@ -264,14 +262,14 @@ body {
 }
 
 .action-buttons > button:nth-child(1) {
-  background-color: var(--color-accent);
+  background-color: var(--color-accent, #f28d77);
   font-weight: bold;
   color: #241512;
 }
 
 .action-buttons > button:nth-child(2) {
   background-color: #232529;
-  color: var(--color-text);
+  color: var(--color-text, #f3f1ed);
 }
 
 /* Editorial aside */
@@ -280,114 +278,12 @@ body {
 }
 
 /*======================================================
-  Hover 기능
-======================================================*/
-/* hover가 가능한 기기의 hover */
-@media (hover: hover) {
-  /* My page link text */
-  .mypage-link:hover > span {
-    color: var(--color-accent);
-  }
-
-  /* Navigation item */
-  .nav-link:hover {
-    color: var(--color-text);
-  }
-}
-
-/*======================================================
-  반응형
-======================================================*/
-/* 화면 너비가 768px 이상일때 */
-@media (min-width: 768px) {
-  /* Header */
-  .header {
-    justify-content: flex-start;
-    gap: clamp(0px, 3.98vw, 56px);
-  }
-
-  /* Navigation */
-  .nav {
-    position: static;
-    flex: 1;
-
-    width: auto;
-    padding: 0;
-  }
-
-  /* My page link */
-  .mypage-link {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  /* My page link text */
-  .mypage-text {
-    display: inline;
-    color: var(--color-text);
-  }
-
-  .mypage-link:focus-visible > span {
-    color: var(--color-accent);
-  }
-
-  /* ------------------------------ */
-
-  /* Hero section */
-  .hero-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    margin-top: 0;
-  }
-
-  .hero-section::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-
-    background: linear-gradient(
-      to right,
-      rgba(10, 13, 15, 0.9),
-      transparent 65%
-    );
-
-    pointer-events: none;
-  }
-
-  /* Editorial aside */
-  .editorial-aside {
-    display: flex;
-    flex-direction: column;
-    text-align: right;
-  }
-
-  .editorial-aside > span:nth-child(1) {
-    margin-top: auto;
-    margin-bottom: 8px;
-    font-size: 14px;
-    color: var(--color-text);
-  }
-
-  .editorial-aside > span:nth-child(2) {
-    font-size: 10px;
-    color: var(--color-secondary);
-  }
-}
-
-/*======================================================
   card-section (영화카드)
-  
   [수정사항]
-  body 배경색 충돌 현상 수정
-  CSS 변수 색상 동기화
-  선택자 이름 수정
+  max-width 삭제(body 속성에 설정해놓음)
 ======================================================*/
 /* Card grid article */
 .card-grid-article {
-  max-width: var(--container-max-width, 1440px);
   margin: 0 auto;
   padding: 48px 64px 0;
   scrollbar-width: 3px;
@@ -403,7 +299,7 @@ body {
 .card-list-header h3 {
   font-size: 24px;
   font-weight: bold;
-  color: var(--color-text);
+  color: var(--color-text, #f3f1ed);
   margin-bottom: 8px;
   padding: 0;
 }
@@ -421,7 +317,7 @@ body {
 .card-list-header p {
   font-size: 12px;
   padding: 0;
-  color: var(--color-secondary);
+  color: var(--color-secondary, #acaeb3);
 }
 
 /* Card List */
@@ -464,14 +360,14 @@ body {
 .card-item h4 {
   font-size: 16px;
   font-weight: 500;
-  color: var(--color-text);
+  color: var(--color-text, #f3f1ed);
   margin-bottom: 4px;
 }
 
 .card-item p {
   font-size: 11px;
   font-weight: 400;
-  color: var(--color-secondary);
+  color: var(--color-secondary, #acaeb3);
 }
 
 /*=====================
@@ -483,8 +379,6 @@ body {
 }
 
 .footer div {
-  max-width: var(--container-max-width, 1440px);
-  max-width: var(--container-max-width, 1440px);
   margin: 0 auto;
 }
 
@@ -498,16 +392,117 @@ body {
   cursor: pointer;
   transition: color 0.2s ease;
 }
+
 .footer ul li:hover {
-  color: var(--accent-coral, #f28d77);
+  color: var(--color-accent, #f28d77);
 }
+
 /* 푸터 안내 및 문구*/
 .footer-notice {
   font-size: 11px;
   color: #7e8289;
   margin-bottom: 20px;
 }
+
 .footer-2026cinemo {
   font-size: 10px;
   color: #7e8289;
+}
+
+/*======================================================
+  Hover 기능
+======================================================*/
+/* hover가 가능한 기기의 hover */
+@media (hover: hover) {
+  /* My page link text */
+  .mypage-link:hover > span {
+    color: var(--color-accent, #f28d77);
+  }
+
+  /* Navigation item */
+  .nav-link:hover {
+    color: var(--color-text, #f3f1ed);
+  }
+}
+
+/*======================================================
+  반응형
+======================================================*/
+/* 화면 너비가 768px 이상일때 */
+@media (min-width: 768px) {
+  /* Header */
+  .header {
+    justify-content: flex-start;
+    gap: clamp(0px, 3.98vw, 56px);
+  }
+
+  /* Navigation */
+  .nav {
+    position: static;
+    flex: 1;
+
+    width: auto;
+    padding: 0;
+  }
+
+  /* My page link */
+  .mypage-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* My page link text */
+  .mypage-text {
+    display: inline;
+    color: var(--color-text, #f3f1ed);
+  }
+
+  .mypage-link:focus-visible > span {
+    color: var(--color-accent, #f28d77);
+  }
+
+  /* ------------------------------ */
+
+  /* Hero section */
+  .hero-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    margin-top: 0;
+  }
+
+  .hero-section::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+      to right,
+      rgba(10, 13, 15, 0.9),
+      transparent 65%
+    );
+
+    pointer-events: none;
+  }
+
+  /* Editorial aside */
+  .editorial-aside {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+  }
+
+  .editorial-aside > span:nth-child(1) {
+    margin-top: auto;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: var(--color-text, #f3f1ed);
+  }
+
+  .editorial-aside > span:nth-child(2) {
+    font-size: 10px;
+    color: var(--color-secondary, #acaeb3);
+  }
 }
