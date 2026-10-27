@@ -61,7 +61,7 @@ body {
 
 .logo img {
   display: block;
-  width: 136px;
+  width: 113px;
   height: auto;
   flex-shrink: 0;
 }
@@ -287,10 +287,21 @@ h1 {
   margin-right: 8px;
 }
 
+.like-content-title {
+  display: flex;
+  justify-content: space-between;
+}
+
 .like-content h2 {
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 24px;
+}
+
+.like-content p {
+  padding: 7.5px 0;
+  font-size: 12px;
+  color: #7e8289;
 }
 
 .like-content-movie {
