@@ -14,7 +14,11 @@ body {
 /* 상단 로고 */
 header {
   width: 100%;
-  padding: 20px 40px;
+  height: 88px; /* 데스크톱 헤더 높이 */
+  display: flex; /* 수직 중앙 정렬을 위한 Flex 설정 */
+  align-items: center; /* 세로 방향 가운데 정렬 */
+  padding: 0 40px; /* 좌우 패딩 */
+  box-sizing: border-box;
 }
 
 header h1 {
@@ -116,14 +120,66 @@ header h1 {
   color: #ffffff;
 }
 
-/* 모바일 화면 (화면 폭이 좁아질 때 2열 배치) */
+/* 모바일 반응형 전체 설정 */
 @media (max-width: 768px) {
+  /* 1. 헤더 높이 및 패딩 축소 */
+  header {
+    height: 72px;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+  }
+
+  /* 헤더 내부 로고 이미지 크기 축소 */
+  header h1 img {
+    height: 18px;
+  }
+
+  /* 2. 상단 소제목 */
+  .badge {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+  }
+
+  /* 3. 카드 2열 배치 */
   .profile-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
+
+  /* 4. 프로필 카드 박스 크기 축소 */
+  .box {
+    width: 90px;
+    height: 90px;
+  }
+
+  /* 5. 카드 내 글자 크기 축소 */
+  .avatar-text {
+    font-size: 36px;
+  }
+
+  /* 6. 헤더 우측 아이콘 크기 축소 */
+  header svg,
+  header img.icon,
+  .header-right img {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* 메인 타이틀 ("누구의 시간인가요?") 모바일 수치 */
+  .page-title,
+  .profile-container h2 {
+    font-size: 28px;
+    letter-spacing: -0.01em;
+  }
+
+  /* 모바일 화면에서는 프로필 카드 하단 설명(desc) 숨기기 */
+  .profile-card .desc {
+    display: none;
+  }
 }
+
 /* 상단 소제목 (YOUR OWN SCENE) */
 .badge {
   color: #e58257;
