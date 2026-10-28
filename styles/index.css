@@ -40,12 +40,6 @@ body {
   border: 0;
 }
 
-/* 아웃라인 제거 */
-a:focus-visible,
-button:focus-visible {
-  outline: none;
-}
-
 /* 스크롤 바 */
 body::-webkit-scrollbar {
   width: 5px;
