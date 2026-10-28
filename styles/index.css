@@ -19,12 +19,12 @@ body {
   max-width: 1440px;
   min-width: 320px;
   margin: 0 auto;
-  background-color: var(--color-background);
+  background-color: var(--color-background, #101113);
 
   font:
     clamp(13px, 0.97vw, 14px) "Noto Sans KR",
     sans-serif;
-  color: var(--color-secondary);
+  color: var(--color-secondary, #acaeb3);
 }
 
 /* 스크린에서 제외 */
@@ -47,18 +47,25 @@ button:focus-visible {
 }
 
 /* 스크롤 바 */
+body::-webkit-scrollbar {
+  width: 5px;
+}
+
 .collection-list::-webkit-scrollbar {
   height: 3px;
 }
 
+body::-webkit-scrollbar-track,
 .collection-list::-webkit-scrollbar-track {
   background: #232529;
 }
 
+body::-webkit-scrollbar-thumb,
 .collection-list::-webkit-scrollbar-thumb {
   background: #7e8289;
 }
 
+body::-webkit-scrollbar-button,
 .collection-list::-webkit-scrollbar-button {
   display: none;
 }
@@ -275,6 +282,7 @@ button:focus-visible {
   width: 2px;
   height: 2px;
   border-radius: 50%;
+  background-color: var(--color-secondary, #acaeb3);
 }
 
 .film-metadata span:nth-child(4) {
