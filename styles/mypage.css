@@ -832,3 +832,131 @@ h1 {
     font-size: 13px;
   }
 }
+
+.account-settings {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  width: 100%;
+  max-width: 1440px;
+  padding: 0 64px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+.account-settings .section-heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.account-setting-row {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+.account-setting-row ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.account-setting-row li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+}
+.email,
+.password,
+.membership,
+.lang {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  gap: 16px;
+}
+.setting-label {
+  order: 1;
+  align-self: center;
+  flex: 0 0 120px;
+  color: #acaeb3;
+}
+.setting-value {
+  order: 2;
+  align-self: center;
+  flex: 1;
+}
+.setting-action {
+  order: 3;
+  align-self: center;
+  background-color: transparent;
+  border: none;
+  font-size: 12px;
+  cursor: pointer;
+  color: #f28d77;
+}
+.account-setting-row li:last-child div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+}
+.account-setting-row li:last-child button {
+  align-self: center;
+  order: 2;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.setting-staus {
+  color: #7e8289;
+}
+
+.setting-status-action {
+  color: #acaeb3;
+}
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 24px 64px 64px;
+
+  box-sizing: border-box;
+  border-top: 1px solid #303237;
+  font-size: 11px;
+}
+footer ul {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px;
+}
+footer li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+footer p {
+  display: flex;
+  align-self: flex-start;
+  margin: 0 0 12px;
+  line-height: 1.5;
+}
