@@ -27,11 +27,12 @@ body {
 
 /* ============================== */
 
+.f-align-center {
+  display: flex;
+  align-items: center;
+}
 /* 헤더 */
 .header {
-  display: flex; /* 수직 중앙 정렬을 위한 Flex 설정 */
-  align-items: center; /* 세로 방향 가운데 정렬 */
-
   width: 100vw;
   max-width: 1440px;
   min-width: 320px;
@@ -53,12 +54,9 @@ body {
 
 /* 메인 영역 정렬 */
 .profile-container {
-  display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
   gap: clamp(40px, 3.89vw, 56px);
-
   min-height: calc(100vh - 150px);
 }
 
@@ -66,9 +64,7 @@ body {
 
 /* 메인 영역 헤더 */
 .profile-header-group {
-  display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 16px;
 }
 
@@ -97,9 +93,7 @@ body {
 
 /* 프로필 카드 스타일 */
 .profile-card {
-  display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 16px;
 
   transition: transform 200ms ease-in-out;
@@ -115,11 +109,7 @@ body {
 
 .box {
   position: relative;
-
-  display: flex;
-  align-items: center;
   justify-content: center;
-
   width: clamp(136px, 10.56vw, 152px);
   height: clamp(136px, 10.56vw, 152px);
   border-radius: 8px;
@@ -130,16 +120,13 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
   font-family: "Inter", sans-serif;
   font-size: clamp(65.28px, 5.07vw, 72.96px);
   color: var(--color-text, #f3f1ed);
 }
 
 .name {
-  display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 6px;
 }
 
@@ -157,15 +144,11 @@ body {
 
 /* 하단 버튼 */
 .btn-manage {
-  display: flex;
-  align-items: center;
   gap: 8px;
-
   height: 48px; /* 시안 기준 고정 높이 48px */
   padding: 0 22px; /* 시안 기준 좌우 패딩 22px */
   border: 1px solid var(--color-border, #303237); /* 시안 테두리 색상 (#303237) */
   border-radius: 4px; /* 둥근 모서리 적용! */
-
   font-size: 14px;
   font-weight: 700;
   color: var(--color-secondary, #acaeb3);
