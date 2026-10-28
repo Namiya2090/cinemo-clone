@@ -70,6 +70,17 @@ body::-webkit-scrollbar-button,
   display: none;
 }
 
+/* 공통 스타일 */
+.f-align-center {
+  display: flex;
+  align-items: center;
+}
+
+.f-direction-column {
+  display: flex;
+  flex-direction: column;
+}
+
 /* ============================== */
 
 /* Header */
@@ -78,8 +89,6 @@ body::-webkit-scrollbar-button,
   top: 0;
   z-index: 10;
 
-  display: flex;
-  align-items: center;
   justify-content: space-between;
 
   width: 100vw;
@@ -98,13 +107,6 @@ body::-webkit-scrollbar-button,
 .home-link svg {
   width: auto;
   height: clamp(23px, 2.01vw, 29px);
-}
-
-/* My page link */
-.my-page-link {
-  display: flex;
-  align-items: center;
-  gap: 8px;
 }
 
 /* My page link - icon */
@@ -206,8 +208,6 @@ body::-webkit-scrollbar-button,
   position: relative;
   z-index: 1;
 
-  display: flex;
-  flex-direction: column;
   gap: 20px;
 
   width: clamp(272px, 37.5vw, 540px);
@@ -218,8 +218,6 @@ body::-webkit-scrollbar-button,
   position: relative;
   left: 36px;
 
-  display: flex;
-  align-items: center;
   gap: 12px;
 }
 
@@ -258,8 +256,6 @@ body::-webkit-scrollbar-button,
 
 /* Film metadata */
 .film-metadata {
-  display: flex;
-  align-items: center;
   gap: 12px;
 
   font-size: 12px;
@@ -356,12 +352,6 @@ body::-webkit-scrollbar-button,
   padding-bottom: clamp(18px, 1.39vw, 20px);
 }
 
-.collection-title > div {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 .collection-title > div > h3 {
   padding-bottom: 8px;
 
@@ -430,8 +420,6 @@ body::-webkit-scrollbar-button,
 
 /* Footer */
 .footer {
-  display: flex;
-  flex-direction: column;
   gap: 20px;
   padding: clamp(32px, 2.78vw, 40px) clamp(24px, 4.44vw, 64px);
 }
@@ -514,7 +502,6 @@ body::-webkit-scrollbar-button,
   .footer-notice,
   .copyright {
     text-align: center;
-    word-break: keep-all;
   }
 }
 
@@ -532,6 +519,11 @@ body::-webkit-scrollbar-button,
     width: auto;
     padding: 0px;
     border: none;
+  }
+
+  /* My page link */
+  .my-page-link {
+    gap: 8px;
   }
 
   /* My page link - text */
@@ -588,6 +580,11 @@ body::-webkit-scrollbar-button,
   }
 
   /* ============================== */
+
+  /* Collection title */
+  .collection-title > div {
+    justify-content: space-between;
+  }
 
   .collection-title > div > span {
     display: inline;
