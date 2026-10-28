@@ -840,8 +840,7 @@ h1 {
   align-items: stretch;
   width: 100%;
   max-width: 1440px;
-  padding: 0 64px;
-  box-sizing: border-box;
+  padding: 0 64px 64px;
   margin: 0 auto;
 }
 .account-settings .section-heading {
@@ -849,6 +848,8 @@ h1 {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
+  font-size: 24px;
+  font-weight: bold;
 }
 .account-setting-row {
   display: flex;
@@ -871,10 +872,12 @@ h1 {
   justify-content: center;
   align-items: stretch;
 }
+.section-heading,
 .email,
 .password,
 .membership,
-.lang {
+.lang,
+.setting-status {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -882,25 +885,42 @@ h1 {
   padding: 16px 0;
   gap: 16px;
 }
+.email,
+.password,
+.membership,
+.lang,
+.setting-status {
+  border-top: 1px solid #303237;
+}
 .setting-label {
   order: 1;
   align-self: center;
   flex: 0 0 120px;
   color: #acaeb3;
+  font-size: 14px;
 }
 .setting-value {
   order: 2;
   align-self: center;
   flex: 1;
+  font-size: 14px;
 }
 .setting-action {
   order: 3;
   align-self: center;
   background-color: transparent;
   border: none;
-  font-size: 12px;
+  font-size: 13px;
   cursor: pointer;
   color: #f28d77;
+}
+.setting-status {
+  font-size: 11px;
+  color: #7e8289;
+}
+.setting-status-action {
+  font-size: 13px;
+  olor: #acaeb3;
 }
 .account-setting-row li:last-child div {
   display: flex;
@@ -923,6 +943,7 @@ h1 {
 .setting-status-action {
   color: #acaeb3;
 }
+
 footer {
   display: flex;
   flex-direction: column;
@@ -932,7 +953,7 @@ footer {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 24px 64px 64px;
+  padding: 40px 64px;
 
   box-sizing: border-box;
   border-top: 1px solid #303237;
@@ -959,4 +980,10 @@ footer p {
   align-self: flex-start;
   margin: 0 0 12px;
   line-height: 1.5;
+}
+
+.footer-list a:hover,
+.setting-action a:hover,
+.setting-status-action a:hover {
+  text-decoration: underline;
 }
