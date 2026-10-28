@@ -73,6 +73,13 @@ header h1 {
   flex-direction: column;
   align-items: center;
   gap: 16px; /* 👈 이미지 박스와 (이름+설명) 사이 간격을 16px로 시안과 동일하게 고정 */
+
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.profile-card:hover {
+  transform: scale(1.05);
 }
 
 .box {
