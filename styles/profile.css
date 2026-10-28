@@ -53,7 +53,6 @@ header h1 {
   color: #acaeb3;
   text-align: center;
 
-  /* 👈 아래 3줄을 꼭 확인/추가해 주세요! */
   width: 100%;
   max-width: 100%; /* 부모 폭을 넘치지 않게 고정 */
   margin: 0 auto 40px; /* 좌우 margin을 auto로 주어 중앙 정렬 보장 */
@@ -64,6 +63,8 @@ header h1 {
   display: flex;
   gap: 24px;
   margin-bottom: 40px;
+  transform: translateZ(0); /* 👈 여기에 추가! */
+  will-change: transform, width; /* 👈 이 줄을 추가해 보세요 */
 }
 
 /* 프로필 카드 스타일 */
