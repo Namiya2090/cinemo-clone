@@ -331,54 +331,6 @@ body {
   color: #f28d77;
 }
 
-/* 태블릿 미디어 쿼리 */
-
-/* @media screen and (min-width: 768px) {
-  .header-container {
-    height: 72px;
-    gap: 56px;
-  }
-
-  .header-menu {
-    margin: 0;
-  }
-
-  .header-menu ul {
-    gap: 24px;
-    font-size: 13px;
-  }
-
-  .logo svg {
-    height: 23px;
-    width: auto;
-  }
-
-  .header-profile p {
-    font-size: 13px;
-  }
-
-  .mypage-main {
-    padding: 112px 32px 48px;
-    row-gap: 36px;
-  }
-
-  .profile-box {
-    padding: 24px;
-    column-gap: 20px;
-  }
-
-  .profile-change {
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  .like-content-movie {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: 20px;
-    row-gap: 28px;
-  }
-} */
-
 @media screen and (max-width: 768px) {
   .header-container {
     display: grid;
