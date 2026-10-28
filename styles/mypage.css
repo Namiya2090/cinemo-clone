@@ -49,6 +49,10 @@ body {
   color: #acaeb3;
 }
 
+.header-menu li {
+  transition: color 200ms ease-in-out;
+}
+
 .header-menu li:hover {
   color: #f3f1ed;
 }
@@ -74,7 +78,7 @@ body {
   min-width: 0;
   width: auto;
   height: 17px;
-  margin: 0 32px;
+  margin: 0 54px;
   font-size: 14px;
   color: #acaeb3;
 }
@@ -270,6 +274,7 @@ h1 {
   border-radius: 4px;
   margin-left: 22px;
   margin-right: 22px;
+  transition: background-color 200ms ease-in-out;
 }
 
 .profile-change:hover {
@@ -315,6 +320,7 @@ h1 {
 .checkmark-background {
   position: relative;
   display: flex;
+  overflow: hidden;
 }
 
 .checkmark {
@@ -396,6 +402,20 @@ h1 {
   gap: 4px;
   color: #acaeb3;
   font-size: 11px;
+}
+
+.image-quiet-orbit,
+.image-blue-hour,
+.image-forest-letter,
+.image-night-diver {
+  transition: transform 0.3s ease;
+}
+
+.image-quiet-orbit:hover,
+.image-blue-hour:hover,
+.image-forest-letter:hover,
+.image-night-diver:hover {
+  transform: scale(1.05);
 }
 
 @media screen and (max-width: 768px) {
