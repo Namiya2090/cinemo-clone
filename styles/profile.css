@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 /* 기본 배경 및 폰트 설정 */
 body {
-  background-color: #141414; /* 까만 배경색[cite: 8] */
+  background-color: #101113; /* 까만 배경색[cite: 8] */
   color: #ffffff; /* 흰색 글자[cite: 8] */
   margin: 0;
   padding: 0;
@@ -63,8 +63,8 @@ header h1 {
   display: flex;
   gap: 24px;
   margin-bottom: 40px;
-  transform: translateZ(0); /* 👈 여기에 추가! */
-  will-change: transform, width; /* 👈 이 줄을 추가해 보세요 */
+  transform: translateZ(0); /*  여기에 추가! */
+  will-change: transform, width; /*  이 줄을 추가해 보세요 */
 }
 
 /* 프로필 카드 스타일 */
@@ -72,7 +72,7 @@ header h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px; /* 👈 이미지 박스와 (이름+설명) 사이 간격을 16px로 시안과 동일하게 고정 */
+  gap: 16px; /*  이미지 박스와 (이름+설명) 사이 간격을 16px로 시안과 동일하게 고정 */
 
   cursor: pointer;
   transition: transform 0.25s ease;
@@ -138,6 +138,7 @@ header h1 {
   display: flex;
   align-items: center;
   gap: 8px;
+  transition: all 0.25s ease;
 }
 
 .btn-manage:hover {
