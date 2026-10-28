@@ -325,7 +325,7 @@ h1 {
 
 .checkmark {
   position: absolute;
-  background-color: #101113;
+  background-color: rgba(16, 17, 19, 0.851);
   width: 24px;
   height: 24px;
   border-radius: 4px;
