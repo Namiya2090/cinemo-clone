@@ -411,6 +411,7 @@ body::-webkit-scrollbar-button,
 /* Thumbnail box */
 .thumbnail-box {
   padding-bottom: 12px;
+  border-radius: 4px;
   overflow: hidden; /* 넘친 부분을 숨기기 */
 }
 
