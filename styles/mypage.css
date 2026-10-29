@@ -377,6 +377,27 @@ body::-webkit-scrollbar-button,
   transform: scale(1.05);
 }
 
+/* Like content check toggle */
+.img-box svg {
+  display: none;
+}
+
+.img-box input {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+
+  width: 25px;
+  height: 25px;
+  opacity: 0;
+
+  cursor: pointer;
+}
+
+.img-box input:checked + svg {
+  display: block;
+}
+
 /* Like content text */
 .like-content-list h4 {
   margin-bottom: 4px;
