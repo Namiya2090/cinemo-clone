@@ -6,6 +6,18 @@ HTML, CSS, Git을 사용해 구현한 가상의 OTT 웹사이트 클론 프로�
 
 ---
 
+## 👥 팀원 구성 및 역할 분담
+
+|    이름    | 역할 | 담당 업무                                                        |
+| :--------: | :--: | :--------------------------------------------------------------- |
+| **배승호** | 팀장 | `index.html`, `index.css`, 전체 코드 총괄·수정 및 통일 작업, PPT |
+| **이가영** | 팀원 | `index.html`, `index.css`, PPT                                   |
+| **문수현** | 팀원 | `mypage.html`, `mypage.css`, PPT 총괄                            |
+| **김태윤** | 팀원 | `mypage.html`, `mypage.css`, 서기, 발표, PPT                     |
+| **전승오** | 팀원 | `profile.html`, `profile.css`, PPT                               |
+
+---
+
 ## 🛠 사용 기술 (Tech Stack)
 
 - **Markup**: HTML5
