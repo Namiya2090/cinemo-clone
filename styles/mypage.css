@@ -344,6 +344,32 @@ body::-webkit-scrollbar-button,
   gap: 24px;
 }
 
+/* Like content check toggle */
+.img-box svg {
+  display: none;
+}
+
+.like-content-list li {
+  position: relative;
+}
+
+.like-content-list input {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  z-index: 5;
+
+  width: 28px;
+  height: 28px;
+  opacity: 0;
+
+  cursor: pointer;
+}
+
+.like-content-list input:checked + a svg {
+  display: block;
+}
+
 /* Like content image */
 .img-box {
   position: relative;
@@ -375,27 +401,6 @@ body::-webkit-scrollbar-button,
 
 .like-content-list a:focus-visible img {
   transform: scale(1.05);
-}
-
-/* Like content check toggle */
-.img-box svg {
-  display: none;
-}
-
-.img-box input {
-  position: absolute;
-  top: -3px;
-  right: -3px;
-
-  width: 28px;
-  height: 28px;
-  opacity: 0;
-
-  cursor: pointer;
-}
-
-.img-box input:checked + svg {
-  display: block;
 }
 
 /* Like content text */
