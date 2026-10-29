@@ -587,22 +587,25 @@ body {
 .setting-status {
   border-top: 1px solid #303237;
 }
+
+.setting-details {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex: 1;
+}
+
 .setting-label {
-  order: 1;
-  align-self: center;
   flex: 0 0 120px;
   color: #acaeb3;
   font-size: 14px;
 }
 .setting-value {
-  order: 2;
-  align-self: center;
   flex: 1;
   font-size: 14px;
 }
 .setting-action {
-  order: 3;
-  align-self: center;
+  flex-shrink: 0;
   background-color: transparent;
   border: none;
   font-size: 13px;
@@ -615,7 +618,7 @@ body {
 }
 .setting-status-action {
   font-size: 13px;
-  olor: #acaeb3;
+  color: #acaeb3;
 }
 .account-setting-row li:last-child div {
   display: flex;
@@ -681,4 +684,35 @@ footer p {
 .setting-action a:hover,
 .setting-status-action a:hover {
   text-decoration: underline;
+}
+
+@media screen and (max-width: 768px) {
+  .account-settings {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 24px 40px;
+    box-sizing: border-box;
+  }
+
+  .setting-details {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .setting-label {
+    flex: initial;
+  }
+
+  .setting-value {
+    flex: initial;
+    overflow-wrap: anywhere;
+  }
+
+  .email,
+  .password,
+  .membership,
+  .lang {
+    gap: 12px;
+  }
 }
