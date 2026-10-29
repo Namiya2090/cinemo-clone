@@ -459,7 +459,6 @@ body {
   align-items: stretch;
   width: 100%;
   max-width: 1440px;
-  padding: 0 64px 64px;
   margin: 0 auto;
 }
 
@@ -542,6 +541,7 @@ body {
 .setting-value {
   flex: 1;
   font-size: 14px;
+  color: #f3f1ed;
 }
 
 /* 계정 설정 각 항목 버튼 */
@@ -584,11 +584,6 @@ body {
   cursor: pointer;
 }
 
-/* 없는 속성 */
-.setting-staus {
-  color: #7e8289;
-}
-
 /* 로그아웃 */
 .setting-status-action {
   color: #acaeb3;
@@ -606,7 +601,7 @@ footer {
   margin: 0 auto;
   padding: 40px 64px;
 
-  box-sizing: border-box;
+  gap: 20px;
   border-top: 1px solid #303237;
   font-size: 11px;
 }
