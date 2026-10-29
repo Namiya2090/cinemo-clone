@@ -12,7 +12,7 @@
   --color-border: #303237;
 
   --transition-text-color: color 200ms ease-in-out;
-  --transition-transform: var(--transition-transform);
+  --transition-transform: transform 200ms ease-in-out;
 
   --side-padding-16-24: clamp(16px, 4.44vw, 24px);
 }
@@ -519,7 +519,7 @@ body::-webkit-scrollbar-button,
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 786px) {
   /* Header container */
   .header-container {
     gap: 56px;
