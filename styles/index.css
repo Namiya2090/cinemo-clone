@@ -12,19 +12,39 @@
   --color-border: #303237;
 
   --transition-text-color: color 200ms ease-in-out;
+  --transition-transform: var(--transition-transform);
+
+  --side-padding-16-24: clamp(16px, 4.44vw, 24px);
 }
 
 /* 기본 스타일 */
 body {
-  max-width: 1440px; /* 문서의 최대 너비 */
-  min-width: 320px; /* 문서의 최소 너비 */
-  margin: 0 auto; /* margin 속성으로 화면 중앙 배치 */
   background-color: var(--color-background, #101113);
-
   font:
     clamp(13px, 0.97vw, 14px) "Noto Sans KR",
     sans-serif;
   color: var(--color-secondary, #acaeb3);
+}
+
+/* 오직 스크린리더에서만 */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* 중앙 배치 */
+.row-center {
+  max-width: 1312px;
+  padding: 0 var(--side-padding-16-24);
+  margin: 0 auto;
 }
 
 /* 스크롤 바(body는 브라우저 오른쪽, .collection-list는 컬렉션 목록) */
@@ -51,17 +71,6 @@ body::-webkit-scrollbar-button,
   display: none;
 }
 
-/* 공통 스타일 */
-.f-align-center {
-  display: flex;
-  align-items: center;
-}
-
-.f-direction-column {
-  display: flex;
-  flex-direction: column;
-}
-
 /* ============================== */
 
 /* Header */
@@ -70,14 +79,17 @@ body::-webkit-scrollbar-button,
   top: 0; /* 요소를 뷰포트 기준 상단에 고정 */
   z-index: 10; /* z-index 값이 10보다 적은 요소들 위에 배치 */
 
+  width: 100%;
+  background-color: var(--color-background, #101113);
+}
+
+/* Header container */
+.header-container {
+  display: flex;
+  align-items: center;
   justify-content: space-between;
 
-  width: 100vw;
-  max-width: 1440px;
-  min-width: 320px;
   height: clamp(72px, 6.11vw, 88px); /* clamp(최소값, 선호값, 최대값) */
-  padding: 0 clamp(24px, 4.44vw, 64px);
-  background-color: var(--color-background, #101113);
 }
 
 /* Home link */
@@ -116,7 +128,7 @@ body::-webkit-scrollbar-button,
   left: 0; /* 기준 요소의 기준점으로부터의 왼쪽 너비를 0으로 즉, 왼쪽으로 딱 붙이기 */
 
   width: 100%;
-  padding: 0px 24px;
+  padding: 0px var(--side-padding-16-24);
   border-bottom: 1px solid var(--color-border, #303237);
   background-color: var(--color-background, #101113);
   box-sizing: border-box;
@@ -125,28 +137,27 @@ body::-webkit-scrollbar-button,
 /* Navigation - List */
 .header-nav-list {
   display: flex;
+  align-items: center;
   gap: clamp(24px, 2.22vw, 32px);
+
+  height: 48px;
 }
 
 /* Navigation - item */
 .header-nav-item {
-  line-height: 48px; /* 글자의 높이를 48px로 맞춰 부모 요소의 높이를 48px로 */
-}
-
-.header-nav-list a {
   transition: var(--transition-text-color); /* 애니메이션 설정 */
 }
 
-.header-nav-list a:focus-visible {
+.header-nav-item:focus-visible {
   color: var(--color-accent, #f28d77);
 }
 
-.header-nav-list :first-child a {
+.header-nav-list li:first-child a {
   font-weight: bold;
   color: var(--color-text, #f3f1ed);
 }
 
-.header-nav-list :first-child a:focus-visible {
+.header-nav-list li:first-child a:focus-visible {
   color: var(--color-accent, #f28d77);
 }
 
@@ -165,8 +176,8 @@ body::-webkit-scrollbar-button,
   position: relative; /* 히어로 이미지의 기준으로 설정 */
 
   height: clamp(573px, 40.97vw, 590px);
-  padding: clamp(104px, calc(317.94px - 14.86vw), 260px)
-    clamp(24px, 4.44vw, 64px) clamp(24px, 4.44vw, 64px);
+  padding: clamp(104px, calc(317.94px - 14.86vw), 260px) 0
+    clamp(24px, 4.44vw, 64px);
   margin-top: 48px;
 }
 
@@ -176,7 +187,7 @@ body::-webkit-scrollbar-button,
   top: 0;
   left: 0;
 
-  width: auto; /* 요소의 높이에 맞춰 너비를 자동 계산 */
+  width: 100%;
   height: clamp(390px, 40.97vw, 590px);
 
   object-fit: cover; /* 비율을 유지한채 컨테이너(부모요소)를 가득 채우게 */
@@ -187,14 +198,18 @@ body::-webkit-scrollbar-button,
   mask-image: linear-gradient(to bottom, black 20%, transparent 100%);
 }
 
+/* Hero text container */
+.hero-text-container {
+  position: relative;
+  z-index: 1;
+}
+
 /* Feature story */
 .feature-story {
-  position: relative;
-  z-index: 1; /* z-index 값이 1보다 적은 요소들 위에 배치 */
-
+  display: flex;
+  flex-direction: column;
   gap: 20px;
-
-  width: clamp(272px, 37.5vw, 540px);
+  max-width: 540px;
 }
 
 /* Editorial label */
@@ -202,6 +217,7 @@ body::-webkit-scrollbar-button,
   position: relative;
   left: 36px;
 
+  display: flex;
   gap: 12px;
 }
 
@@ -232,7 +248,7 @@ body::-webkit-scrollbar-button,
 }
 
 /* Film title */
-.film-title h2 {
+.film-title p {
   font-size: clamp(40px, 4.44vw, 64px);
   font-weight: bold;
   color: var(--color-text, #f3f1ed);
@@ -244,6 +260,7 @@ body::-webkit-scrollbar-button,
 
 /* Film metadata */
 .film-metadata {
+  display: flex;
   gap: 12px;
 
   font-size: 12px;
@@ -297,7 +314,7 @@ body::-webkit-scrollbar-button,
 
   font-size: 14px;
 
-  transition: transform 200ms ease-in-out;
+  transition: var(--transition-transform);
 }
 
 .film-buttons button:focus-visible {
@@ -322,17 +339,20 @@ body::-webkit-scrollbar-button,
 }
 
 /* ============================== */
+
 /* Collection-section */
 .collection-section {
-  padding: clamp(8px, 1.11vw, 16px) clamp(24px, 4.44vw, 64px)
-    clamp(40px, 4.44vw, 64px);
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+
+  padding: clamp(8px, 1.11vw, 16px) 0 clamp(40px, 4.44vw, 64px);
   border-bottom: var(--color-border, #303237);
-  overflow: auto; /* 안 넘치면 그대로 넘치면 스크롤 표시 */
 }
 
 /* Collection article */
-.collection-article:first-child {
-  padding-bottom: clamp(36px, 3.33vw, 48px);
+.collection-article {
+  width: 100%;
 }
 
 /* Collection title */
@@ -397,7 +417,7 @@ body::-webkit-scrollbar-button,
 /* Thumnail image */
 .thumbnail-box img {
   transform-origin: center;
-  transition: transform 200ms ease-in-out;
+  transition: var(--transition-transform);
 }
 
 .collection-item a:focus-visible img {
@@ -408,8 +428,14 @@ body::-webkit-scrollbar-button,
 
 /* Footer */
 .footer {
+  padding: clamp(32px, 2.78vw, 40px) 0;
+}
+
+/* Footer container */
+.footer-container {
+  display: flex;
+  flex-direction: column;
   gap: 20px;
-  padding: clamp(32px, 2.78vw, 40px) clamp(24px, 4.44vw, 64px);
 }
 
 /* Footer navigation list */
@@ -494,9 +520,8 @@ body::-webkit-scrollbar-button,
 }
 
 @media (min-width: 768px) {
-  /* Header */
-  .header {
-    justify-content: flex-start;
+  /* Header container */
+  .header-container {
     gap: 56px;
   }
 
@@ -504,13 +529,14 @@ body::-webkit-scrollbar-button,
   .header-nav {
     position: static;
     flex: 1; /* 남는 부분을 다 차지하겠다 */
-    width: auto;
-    padding: 0px;
+    padding: 0;
     border: none;
   }
 
   /* My page link */
   .my-page-link {
+    display: flex;
+    align-items: center;
     gap: 10px;
   }
 
@@ -527,12 +553,7 @@ body::-webkit-scrollbar-button,
 
   /* ============================== */
 
-  /* Hero section */
   .hero-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
     margin-top: 0;
   }
 
@@ -557,6 +578,9 @@ body::-webkit-scrollbar-button,
   .editorial-aside {
     display: flex;
     flex-direction: column;
+
+    padding-top: 48px;
+
     text-align: right;
   }
 
@@ -574,6 +598,8 @@ body::-webkit-scrollbar-button,
 
   /* Collection title */
   .collection-title > div {
+    display: flex;
+    align-items: center;
     justify-content: space-between;
   }
 
